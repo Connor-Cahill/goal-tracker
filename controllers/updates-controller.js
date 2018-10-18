@@ -68,7 +68,7 @@ app.get('/goals/:goalId/updates/:id/edit', (req, res) => {
     }
 
 })
-
+//////// /// //// //
 //PUT route // TODO: need to make work ---> cannot get the goalId or update ._id ---- on view
 app.put('/goals/:goalId/updates/:id', (req, res) => {
     if(req.user) {

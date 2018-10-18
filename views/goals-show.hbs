@@ -10,20 +10,23 @@
       <button class="delete-goal-btn">Edit</button>
   </form>
 </div>
+    <!--// Action Items //---->
 <h2 class="action-items-header">Actions Items:</h2>
 <form action="/goals/{{goals._id}}/actionItems" method="post">
+    <input type="hidden" name="goalId" value="{{goals._id}}">
     <span><input type="text" class="action-item-input" name="item" placeholder="Action Items Go In Here">
-    <button type="submit" class="save-action-item-btn" name="button">Save Item</button></span>
+    <button type="submit" class="save-action-item-btn">Save Item</button></span>
 </form>
 {{#each goals.actionItems}}
     <ul class="action-items-list">
-        <li class="action-item">{{this.item}}<button type="submit" class="action-item-delete-btn">X</button></li>
+        <li class="action-item">{{this.item}}<form action="/goals/{{this.goalId}}/actionItems/{{this._id}}?_method=DELETE" method="post"><button type="submit" class="action-item-delete-btn">X</button></form></li>
     </ul>
 {{/each}}
 <!--- Goal Updates --->
 <h2 class="new-updates-header">Log Updates: </h2>
 <div class="updates-form-container">
     <form action="/goals/{{goals._id}}/updates" method="post">
+        <input type="hidden" name="goalId" value="{{goals._id}}">
         {{> updates-form}}
         <button type="submit">Save</button>
     </form>

@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ItemSchema = new Schema ({
-    item: {type: String, required: true}
+    item: {type: String, required: true},
+    goalId: {type: Schema.Types.ObjectId, ref: 'Goal', required: true}
 })
 
 
