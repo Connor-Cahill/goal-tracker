@@ -53,15 +53,12 @@ EDIT UPDATES SECTION-- must GET edit form & PUT
 app.get('/goals/:goalId/updates/:id/edit', (req, res) => {
     if(req.user) {
         Goal.findById(req.params.goalId).then(goal => {
-            console.log('this is goal ----> ' + goal);
+            ///console.log('this is goal ----> ' + goal);
             return Update.findById(req.params.id)
         }).then(update => {
-            update.set(req.body);
-            return update.save();
-        }).then(update => {
-            console.log('This is OTHER DREAM ---> ' + goal)
-            res.render('updates-edit.hbs', {goal, update});
-        }).catch(err => {
+            console.log('this is the current update ----> ' + update)
+            res.render('updates-edit.hbs', {update: update});
+            }).catch(err => {
             console.log(err.message);
         })
     } else {
@@ -72,20 +69,29 @@ app.get('/goals/:goalId/updates/:id/edit', (req, res) => {
 
 })
 
-//testing put route
+//PUT route // TODO: need to make work ---> cannot get the goalId or update ._id ---- on view
 app.put('/goals/:goalId/updates/:id', (req, res) => {
-    Goal.findById(req.params.goalId).then(goal => {
-        console.log('this is the id I need ----> ' + req.params.goalId);
-        return Update.findById(req.params.id)
-    }).then(update => {
-        update.set(req.body);
-        return update.save()
-    }).then(edittedUpdate => {
-        res.redirect(`/goals/${req.params.goalId}`)
-    }).catch(err => {
-        console.log(err.message);
-    })
+    if(req.user) {
+        console.log('inside route >>>>>>>>');
+        Goal.findById(req.params.goalId).then(goal => {
+            return Update.findById(req.params.id);
+        }).then(update => {
+            console.log(req.body);
+            update.set(req.body);
+            return update.save();
+        }).then(update => {
+            res.redirect(`/goals/${req.params.goalId}`)
+
+        }).catch(err => {
+            console.log(err.message);
+        })
+    } else {
+        res.redirect('/');
+        console.log('User is not signed in.');
+    }
 })
+
+
 
 
 
