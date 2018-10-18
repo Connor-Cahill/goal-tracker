@@ -1,0 +1,7 @@
+<h1 class="edit-update-header">Edit Update</h1>
+<div class="edit-update-page-container">
+    <form action="/goals/{{updates.goalId}}/updates/{{updates._id}}?_method=PUT" method="post">
+        {{> updates-form}}
+        <button type="submit">Apply Edit</button>
+    </form>
+</div>

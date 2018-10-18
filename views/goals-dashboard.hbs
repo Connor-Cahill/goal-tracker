@@ -1,0 +1,27 @@
+<h1 class="goalboard-header">Your Goals Dashboard</h1>
+<div class="index-container">
+    <div class="side-nav-container">
+        <h2 class="username-header">Hey, {{user.username}}!</h2>
+        <h3 class="header-question">What goals are we accomplishing today?</h3>
+        <ul class="profile-options">
+            <li class="profile-list-item"><a href="/goals/new" class="profile-options-btn">Create New</a></li>
+            <li class="profile-list-item"><a href="#" class="profile-options-btn">Browse Friends</a></li>
+            <li class="profile-list-item"><a href="/dashboard/edit" class="profile-options-btn">Edit Goal</a></li>
+        </ul>
+    </div>
+    <div class="card-container">
+        {{#each user.goals}}
+        <div class="row">
+            <div class="goal-card">
+                <h1 class="goal-title">{{this.title}}</h1>
+                <p class="goal-time">{{this.createdAt}}</p>
+                <p class="goal-type">{{this.type}}</p>
+                <hr class="content-divider">
+                <p class="goal-description">{{this.description}}</p>
+                <a class="show-goal-btn" href="/goals/{{this._id}}">Log Updates</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>

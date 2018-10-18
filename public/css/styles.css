@@ -1,0 +1,302 @@
+/*************
+---Color Scheme and fonts:
+Colors:
+    - purple color: 9F32B2
+    - blue (dark): 313896
+    -blue (light): 00D7FF
+
+    ***************/
+
+
+
+* {
+    font-family: 'Cabin', sans-serif;
+}
+body {
+    font-size: 24px;
+    color: #22181C;
+    margin-left: 0px;
+}
+
+h1 h2 h3 {
+    font-family: 'Bitter', serif;
+
+}
+
+
+/********************
+---DASHBAORD--Section ----
+**********************/
+.goalboard-header {
+    text-align: center;
+    font-size: 2.4em;
+    font-family: 'Bitter', serif;
+
+
+
+}
+
+.index-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.side-nav-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #313896;
+    margin-right: 150px;
+    padding-left: 15px;
+    padding-right: 30px;
+    width: 45%;
+}
+
+.side-nav-container a {
+    text-decoration: none;
+}
+
+.side-nav-container a:hover {
+    text-decoration: none;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.goal-card {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    flex-wrap: wrap;
+    background-color: #F6E8EA;
+    height: 100%;
+    width: 90%;
+    margin-right: 350px;
+
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 10px 5px 5px;
+
+}
+
+
+/***** ----Side bar contents ---- *****/
+.profile-pic {
+    padding-left: 20px;
+    padding-top: 30px;
+    /* Get image to show, round the image */
+}
+.username-header {
+    margin-top: 15px;
+    color: #F6E8EA;
+    padding-left: 20px;
+    font-family: 'Bitter', serif;
+
+}
+
+.header-question {
+    position: sticky;
+    color: white;
+}
+
+.profile-options {
+    margin-top: 3em;
+    list-style: none;
+    padding-right: 20px;
+    height: 100vh;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-list-item {
+    margin-top: 50px;
+    transition: all 200ms;
+
+}
+.profile-list-item:hover {
+    transform: scale(1.10);
+}
+
+.profile-options-btn {
+    border: solid;
+    background-color: #F6E8EA;
+    color: #9F32B2;
+    width: 100%;
+    height: 4em;
+    text-decoration: none;
+    padding: auto;
+    margin-top: 20px;
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition-property: all;
+    transition-duration: 200ms;
+    padding-bottom: 15px;
+}
+.profile-options-btn:hover {
+    color: #F6E8EA;
+    background-color:#9F32B2;
+}
+
+/* .profile-link {
+    text-align: center;
+    color: #4BC0D9;
+    text-decoration: none;
+
+
+
+}
+
+.profile-link:hover {
+    text-decoration: none;
+
+
+} */
+
+
+/*** DREAM DISPLAY CARD ****/
+
+
+
+
+/*********************
+------NEW--DREAM--SECTION---
+**********************/
+.add-goal-header {
+    text-align: center;
+    margin-top: 25px;
+    font-family: 'Bitter', serif;
+    color: white;
+    font-size: 4em;
+
+}
+
+.new-form-container {
+    background-color: white;
+    color: #313896;
+    width: 50em;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+/****----FORM ITEMS----****/
+.goal-title-label {
+    /* fix font and spacing with input */
+
+}
+.title-input {
+    width: 100%;
+    color: #313896;
+    margin-bottom: 30px;
+}
+
+.duration-type-label {
+    /* fix font size and spacing-- needs margin -- */
+
+}
+
+.description-label {
+    /* fix spacing and font */
+    margin-top: 30px;
+
+}
+.description-input {
+    width: 100%;
+    color: #313896;
+}
+
+.description-input:focus {
+
+    }
+
+.save-goal-btn {
+    width: 10em;
+    background-color: #313896;
+    color: white;
+    transition: all 200ms;
+
+}
+
+.save-goal-btn:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: #313896;
+    outline: none;
+}
+
+
+
+/****************************
+---SHOW--SINGLE--DREAM--SECTION--
+*****************************/
+.show-goal-card {
+    margin: auto;
+    width: 80%;
+    background-color: white;
+    padding: 25px;
+    margin-top: 50px;
+}
+.action-items-header {
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.action-item-input {
+    width: 30%;
+    margin-left: 20px;
+
+}
+
+.new-updates-header {
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+/*-- new update section --*/
+.update-title-input {
+    width: 50%;
+    margin-left: 20px;
+}
+
+.update-content-input {
+    width: 50%;
+    margin-left: 20px;
+}
+
+.save-update-btn {
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.update-container {
+    margin-left: 20px;
+}
+
+
+/******************************
+
+*******************************/
+
+#action-items {
+    height: 20em;
+    width: 70em;
+}
+
+.action-item-delete-btn {
+    outline: none;
+    border: none;
+    background: none;
+    color: red;
+
+}
+
+.action-item-delete-btn:active {
+    outline: none;
+}

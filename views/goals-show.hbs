@@ -1,0 +1,47 @@
+<div class="show-goal-card">
+  <div class="card-display-container">
+    <h1 class="show-goal-title">{{goals.title}}</h1>
+    <p class="show-created-at">{{goals.createdAt}}</p>
+    <p class="show-type">{{goals.type}}</p>
+    <hr class="content-divider">
+    <p class="show-goal-content">{{goals.description}}</p>
+  </div>
+  <form action='/goals/{{goals._id}}/edit' method="get">
+      <button class="delete-goal-btn">Edit</button>
+  </form>
+</div>
+<h2 class="action-items-header">Actions Items:</h2>
+<form action="/goals/{{goals._id}}/actionItems" method="post">
+    <span><input type="text" class="action-item-input" name="item" placeholder="Action Items Go In Here">
+    <button type="submit" class="save-action-item-btn" name="button">Save Item</button></span>
+</form>
+{{#each goals.actionItems}}
+    <ul class="action-items-list">
+        <li class="action-item">{{this.item}}<button type="submit" class="action-item-delete-btn">X</button></li>
+    </ul>
+{{/each}}
+<!--- Goal Updates --->
+<h2 class="new-updates-header">Log Updates: </h2>
+<div class="updates-form-container">
+    <form action="/goals/{{goals._id}}/updates" method="post">
+        {{> updates-form}}
+        <button type="submit">Save</button>
+    </form>
+</div>
+<h3 class="updates-header">Updates: </h3>
+<div class="updates-container">
+    {{#each goals.updates}}
+        <h3 class=update-title>{{this.updateTitle}}</h3>
+        <p class="update-created-at">{{this.createdAt}}</p>
+        <p class="update-content">{{this.updateContent}}</p>
+        <span><form action="/goals/{{this.goalId}}/updates/{{this._id}}?_method=DELETE" method="post">
+                <button type="submit" class="update-delete-btn">Delete</button>
+            </form>
+            <form action="/goals/{{this.goalId}}/updates/{{this._id}}/edit" method="get">
+                <button type="submit">Edit</button>
+            </form></span>
+
+        <hr>
+    {{/each}}
+
+</div>

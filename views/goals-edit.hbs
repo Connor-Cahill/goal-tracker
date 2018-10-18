@@ -1,0 +1,9 @@
+
+<h1>Edit Goal</h1>
+
+<div class="goals-edit-form">
+    <form action="/goals/{{goal._id}}?_method=PUT" method="post">
+        {{> goals-form}}
+        <button type="submit">Apply Edits</button>
+    </form>
+</div>

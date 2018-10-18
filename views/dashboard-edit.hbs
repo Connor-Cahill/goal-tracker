@@ -1,0 +1,9 @@
+
+
+{{#each user.goals}}
+    <h2>{{this.title}}</h2>
+    <p>{{this.description}}</p>
+    <form action="/goals/{{this._id}}?_method=DELETE" method="post">
+        <button type="submit">Delete</button>
+    </form>
+{{/each}}
