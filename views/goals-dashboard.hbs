@@ -13,12 +13,20 @@
         {{#each user.goals}}
         <div class="row">
             <div class="goal-card">
+                {{#if this.accomplished}}
+                <div class="accomplished-background">
+                    <h2 class="goal-accomplished-header">Goal Accomplished</h2>
+                </div>
+                {{/if}}
                 <h1 class="goal-title">{{this.title}}</h1>
                 <p class="goal-time">{{this.createdAt}}</p>
                 <p class="goal-type">{{this.type}}</p>
                 <hr class="content-divider">
                 <p class="goal-description">{{this.description}}</p>
                 <a class="show-goal-btn" href="/goals/{{this._id}}">Log Updates</a>
+                <form action="/goals/{{this._id}}/accomplished?_method=PUT" method="post">
+                    <button type="submit" class="accomplish-btn">Goal Accomplished!</button>
+                </form>
             </div>
         </div>
         {{/each}}

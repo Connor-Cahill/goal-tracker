@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const Dream = require('../models/goal')
+const Goal = require('../models/goal')
 const Update = require('../models/update');
 const ActionItem = require('../models/action-item');
 
@@ -44,21 +44,31 @@ module.exports = function(app) {
 
 
 
-    //Create Dream Page -----(GET)-----
+    //Create Goal Page -----(GET)-----
     app.get('/goals/new', (req, res) => {
-        res.render('goals-new.hbs');
+        if(req.user) {
+            res.render('goals-new.hbs');
+        } else {
+            res.redirect('/');
+            console.log('user not signed in');
+        }
     })
 
 
     //show single goal -----(GET)-------
     app.get('/goals/:id', (req, res) => {
-        Dream.findById(req.params.id).populate('updates').populate({path: 'actionItems'}).then(goals => {
-            // console.log(goals); ---> returns the goals correctly(goals do contain updates)
+        if(req.user) {
+            Goal.findById(req.params.id).populate('updates').populate({path: 'actionItems'}).then(goals => {
+                // console.log(goals); ---> returns the goals correctly(goals do contain updates)
 
-            res.render('goals-show.hbs', {goals: goals });
-        }).catch(err => {
-            console.log(err.message);
-        })
+                res.render('goals-show.hbs', {goals: goals });
+            }).catch(err => {
+                console.log(err.message);
+            })
+        } else {
+            res.redirect('/');
+            console.log('user is not signed in ');
+        }
     })
 
 
@@ -69,7 +79,7 @@ module.exports = function(app) {
     //create new goal ---(POST)---
     app.post('/goals', (req, res) => {
         if (req.user) {
-            const goal = new Dream(req.body);
+            const goal = new Goal(req.body);
             goal.save().then(response => {
                 return User.findById(req.user._id)
             }).then(user => {
@@ -90,16 +100,22 @@ module.exports = function(app) {
         //----EDIT ROUTE ----//------//
         //GET edits form
         app.get('/goals/:id/edit', (req, res) => {
-            Dream.findById(req.params.id).then(goal => {
-                res.render('goals-edit.hbs', {goal: goal});
-            })
+            if(req.user) {
+                Goal.findById(req.params.id).then(goal => {
+                    res.render('goals-edit.hbs', {goal: goal});
+                })
+            } else {
+                res.redirect('/');
+                console.log('user is not signed in');
+            }
+
         })
 
         ///PUT route to update the goal
         app.put('/goals/:id', (req, res) => {
-            Dream.findById(req.params.id).then(goal => {
+            Goal.findById(req.params.id).then(goal => {
                 goal.set(req.body);
-                goal.save().then(updatedDream => {
+                goal.save().then(updatedGoal => {
                     res.redirect(`/goals/${req.params.id}`)
                 }).catch(err => {
                     console.log(err.message);
@@ -111,7 +127,7 @@ module.exports = function(app) {
         //-------DELETE ROUTES -----// ------ //
         //delete goal
         app.delete('/goals/:id', (req, res) => {
-            Dream.findOneAndRemove({_id: req.params.id}).then(goals => {
+            Goal.findOneAndRemove({_id: req.params.id}).then(goals => {
                 console.log('deleted')
                 res.redirect('/dashboard');
             }).catch(err => {
@@ -119,6 +135,28 @@ module.exports = function(app) {
             })
 
         })
+
+    /********
+    GOAL ACCOMPLISHED ----- PATCH route
+    ********/
+    //PUT ---- (?use patch?)
+    app.put('/goals/:id/accomplished', (req, res) => {
+        if(req.user) {
+            Goal.findById(req.params.id).then(goal => {
+                goal.set({accomplished: true});
+                goal.save();
+                console.log('this is acccomplished goal ---> ' + goal);
+            }).then(goal => {
+                res.redirect('/dashboard');
+            }).catch(err => {
+                console.log(err.message);
+            })
+        } else {
+            res.redirect('/');
+            console.log('User is not logged in');
+        }
+
+    })
 
 
 }
