@@ -766,13 +766,87 @@ h1 h2 h3 {
     height: 20em;
     width: 70em;
 }
+.action-items-list {
+     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+
+.action-item-input {
+    margin-bottom: 24px;
+    padding: 8px;
+    border-radius: 16px;
+    color: #3C457D;
+    font-size: .6em;
+}
+
+.save-action-item-btn {
+    color: rgba(236, 84, 130, 1);
+    background: none;
+    font-weight: 700;
+    border: none;
+    font-size: 1.2em;
+    outline: none;
+    transition: all 500ms;
+
+}
+.save-action-item-btn:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
 
 .action-item-delete-btn {
     outline: none;
     border: none;
     background: none;
-    color: red;
+    color: rgba(236, 84, 130, 1);
+    margin-left: 24px;
+    font-size: .75em;
+    margin-top: 28px;
+    transition: all 500ms;
 
+}
+.update-content-input {
+    width: 75%;
+    border-radius: 8px;
+    font-size: .8em;
+    color: inherit;
+    margin: auto;
+    margin-left: 12px;
+}
+.save-update-btn {
+    background-color: rgba(236, 84, 130, 1);
+    width: 12em;
+    margin-bottom: 16px;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: .55em;
+    border-radius: 8px;
+    transition: all 500ms;
+}
+
+.save-update-btn:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+.bullet {
+    margin-top: 24px;
+    margin-right: 8px;
+}
+.action-item-delete-btn:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+.update-title-input {
+    margin-bottom: 24px;
+    padding: 8px;
+    border-radius: 8px;
+
+    color: #3C457D;
+    font-size: .6em;
 }
 
 .action-item-delete-btn:active {
