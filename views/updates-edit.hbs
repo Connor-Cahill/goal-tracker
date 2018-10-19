@@ -3,6 +3,6 @@
     <form action="/goals/{{update.goalId}}/updates/{{update._id}}?_method=PUT" method="post">
         <input type="hidden" name="goalId" value="{{update.goalId}}">
         {{> updates-form}}
-        <button type="submit">Apply Edit</button>
+        <button type="submit" class="apply-update-edit-btn">Apply Edit</button>
     </form>
 </div>

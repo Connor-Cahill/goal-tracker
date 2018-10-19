@@ -283,6 +283,9 @@ h1 h2 h3 {
     text-align: center;
     color: white;
     font-size: 2.4em;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
 
 
 
@@ -389,6 +392,8 @@ h1 h2 h3 {
     text-align: left;
     margin-left: 32px;
     font-size: 1em;
+    text-align: left;
+    color: #3C457D;
 }
 
 .card-btns {
@@ -409,6 +414,7 @@ h1 h2 h3 {
 }
 .show-btn:hover {
     transform: scale(1.15);
+    cursor: pointer;
 }
 
 .accomplish-btn {
@@ -424,6 +430,7 @@ h1 h2 h3 {
 }
 .accomplish-btn:hover {
     transform: scale(1.15);
+    cursor: pointer;
 }
 
 
@@ -494,6 +501,9 @@ h1 h2 h3 {
     margin-top: 64px;
     color: white;
     font-size: 2.5em;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
 
 
 }
@@ -597,7 +607,9 @@ h1 h2 h3 {
     margin-top: 64px;
     color: white;
     font-size: 2.5em;
-
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
 }
 
 .goals-edit-form {
@@ -802,7 +814,7 @@ h1 h2 h3 {
     background: none;
     color: rgba(236, 84, 130, 1);
     margin-left: 24px;
-    font-size: .75em;
+    font-size: .8em;
     margin-top: 28px;
     transition: all 500ms;
 
@@ -849,6 +861,161 @@ h1 h2 h3 {
     font-size: .6em;
 }
 
+.get-updates-edit-btn {
+    background-color: rgba(236, 84, 130, 1);
+    width: 12em;
+    margin-bottom: 16px;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: .55em;
+    border-radius: 8px;
+    transition: all 500ms;
+}
+.get-updates-edit-btn:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+.update-delete-btn {
+    background-color: rgba(236, 84, 130, 1);
+    width: 12em;
+    margin-bottom: 16px;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: .55em;
+    border-radius: 8px;
+    transition: all 500ms;
+}
+.update-delete-btn:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+.update-item-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
 .action-item-delete-btn:active {
     outline: none;
+}
+
+
+
+/*------------------------------
+--------UPDATES EDIT PAGE---------
+---------------------------------*/
+.edit-update-header {
+    text-align: center;
+    color: white;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+    font-size: 2.5em;
+
+}
+.update-content-label {
+    font-size: .9em;
+    color: #3C457D;
+    margin-right: 65%;
+
+}
+.edit-update-page-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #E6E8F4;
+    text-align: center;
+    height: 100%;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 64px;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 6px 8px 9px 1px rgba(0,0,0,0.58);
+    color: #3C457D;
+
+}
+
+.apply-update-edit-btn {
+    background-color: rgba(236, 84, 130, 1);
+    width: 12em;
+    margin-bottom: 16px;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: .55em;
+    border-radius: 8px;
+    transition: all 500ms;
+}
+
+.apply-update-edit-btn:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+/*-------------------------
+-----------EDIT DASHBOARD SECTION------
+-----------------------------*/
+
+.delete-goals-header {
+    text-align: center;
+    color: white;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+    font-size: 2.5em;
+}
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #E6E8F4;
+    text-align: left;
+    height: 100%;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 64px;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 6px 8px 9px 1px rgba(0,0,0,0.58);
+    color: #3C457D;
+}
+.admin-goal-title {
+    font-size: 2em;
+    color: inherit;
+    margin-left: 16px;
+}
+
+.admin-goal-description {
+    font-size: 1em;
+    margin-left: 16px;
+
+}
+
+.goals-delete-btn {
+    background-color: rgba(236, 84, 130, 1);
+    width: 12em;
+    margin-bottom: 16px;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: .55em;
+    border-radius: 8px;
+    transition: all 500ms;
+}
+
+.goals-delete-btn:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+.admin-divider {
+    width: 100%;
+    border-bottom: solid;
+    border-color: #3C457D;
 }

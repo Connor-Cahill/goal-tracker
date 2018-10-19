@@ -1,9 +1,12 @@
 
-
+<h1 class="delete-goals-header">Delete Goals</h1>
+<div class="admin-container">
 {{#each user.goals}}
-    <h2>{{this.title}}</h2>
-    <p>{{this.description}}</p>
+    <h2 class="admin-goal-title">{{this.title}}</h2>
+    <p class="admin-goal-description">{{this.description}}</p>
     <form action="/goals/{{this._id}}?_method=DELETE" method="post">
-        <button type="submit">Delete</button>
+        <button type="submit" class="goals-delete-btn">Delete</button>
     </form>
+    <div class="admin-divider"></div>
 {{/each}}
+</div>

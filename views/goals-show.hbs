@@ -55,12 +55,14 @@
             <h3 class=update-title>{{this.updateTitle}}</h3>
             <p class="update-created-at">{{this.createdAt}}</p>
             <p class="update-content">{{this.updateContent}}</p>
-            <span><form action="/goals/{{this.goalId}}/updates/{{this._id}}?_method=DELETE" method="post">
+            <div class="update-item-btn-container">
+                <form action="/goals/{{this.goalId}}/updates/{{this._id}}?_method=DELETE" method="post">
                     <button type="submit" class="update-delete-btn">Delete</button>
                 </form>
                 <form action="/goals/{{this.goalId}}/updates/{{this._id}}/edit" method="get">
-                    <button type="submit">Edit</button>
-                </form></span>
+                    <button type="submit" class="get-updates-edit-btn">Edit</button>
+                </form>
+            </div>
 
             <hr>
         {{/each}}
