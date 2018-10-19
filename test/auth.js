@@ -68,7 +68,18 @@ describe('User', () => {
             if(err) {done(err)}
             res.status.should.be.equal(200)
             res.should.be.html;
-            res.should.have.cookies('Token')
+            res.should.have.cookie('Token')
+            done();
+        })
+    })
+    it('Should be an error when wrong username or password entered', (done) => {
+        const sampleUser = {username: 'wrongwrong', password: 'veryWrong123'};
+        agent
+        .post('/login')
+        .send(sampleUser)
+        .end((err, res) => {
+            if(err) {done(err)}
+            res.status.should.be.equal(401);
             done();
         })
     })

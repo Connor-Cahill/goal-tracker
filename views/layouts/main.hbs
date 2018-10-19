@@ -13,11 +13,15 @@
     </head>
     <body>
 
-        <nav style="text-align: right;">
-            <ul style="list-style: none;">
-                <li><a href="/login">Login</a></li>
-                <li><a href="/logout">Logout</a></li>
-                <li><a href="/signup">Sign Up</a></li>
+        <nav class="auth-nav">
+            <h2 class="dreamboard-nav">DreamBoard</h2>
+            <ul class="main-nav-list">
+                {{#if user}}
+                    <li class="main-nav-item"><a href="/logout" class="main-nav-link">LOGOUT</a></li>
+                {{else}}
+                    <li class="main-nav-item"><a href="/login" class="main-nav-link">LOGIN</a></li>
+                    <li class="main-nav-item"><a href="/signup" class="main-nav-link">SIGN UP</a></li>
+                {{/if}}
             </ul>
         </nav>
 

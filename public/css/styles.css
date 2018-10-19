@@ -1,9 +1,13 @@
 /*************
 ---Color Scheme and fonts:
 Colors:
-    - purple color: 9F32B2
-    - blue (dark): 313896
-    -blue (light): 00D7FF
+
+-Dark Blue #3C457D
+-Really Dark Blue: #323545
+-light blue #B1BBEC
+-medium blue #536ADE
+-off white: #E6E8F4
+
 
     ***************/
 
@@ -14,8 +18,14 @@ Colors:
 }
 body {
     font-size: 24px;
-    color: #22181C;
+    background:repeating-linear-gradient(45deg, rgb(50, 53, 69) 15%, rgb(60, 69, 125) 16%, rgb(83, 106, 222) 81%);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: black;
     margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
 }
 
 h1 h2 h3 {
@@ -23,6 +33,239 @@ h1 h2 h3 {
 
 }
 
+
+.auth-nav {
+    background-color: #E6E8F4;
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+}
+
+.dreamboard-nav {
+    color: #536ADE;
+    margin-left: 16px;
+    font-size: 1em;
+    transition: all 200ms;
+}
+
+.dreamboard-nav:hover {
+    color: #3C457D;
+    cursor: pointer;
+}
+/* 316cfe --> TODO: COLOR I WANT TO USE AS ACCENT */
+.main-nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.main-nav-item {
+    margin-right: 32px;
+    color: #536ADE;
+    transition: all 300ms;
+    margin-top: 16px;
+}
+
+.main-nav-item:hover {
+    transform: scale(1.1);
+    color: #3C457D;
+}
+.main-nav-link {
+    text-decoration: none;
+    color: #536ADE;
+    font-size: .75em;
+    transition: all 300ms;
+}
+.main-nav-link:hover {
+    color: #3C457D;
+    transform: scale(1.1);
+}
+
+.main-nav-link:visited {
+
+}
+
+
+
+/*---------------------------------------
+------------HOME PAGE STYLING ------------
+------------------------------------------*/
+.home-container {
+    background-color: #E6E8F4;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    margin: auto;
+    margin-top: 256px;
+    justify-content: center;
+    text-align: center;
+    border-radius: 32px;
+    box-shadow: 19px -10px 29px -3px rgba(0,0,0,0.71);
+    padding-bottom: 32px;
+
+}
+
+.home-title {
+    color: #323545;
+    margin-bottom: 0px;
+    font-size: 3em;
+    text-decoration: none;
+}
+
+
+.home-byline {
+    margin-top: 32px;
+    color: #323545;
+    text-decoration: none;
+}
+
+
+.home-btn-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+
+}
+
+.home-signup {
+    background-color: rgba(236, 84, 130, 1);
+    width: 20%;
+    margin: auto;
+    margin-bottom: 40px;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    border-radius: 24px;
+    transition: all 500ms;
+}
+.home-signup:hover {
+    transform: scale(1.15);
+}
+.home-signup:visited {
+    color: white;
+    text-decoration: none;
+}
+.home-login {
+    background-color: rgba(236, 84, 130, 1);
+    width: 20%;
+    margin: auto;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    border-radius: 24px;
+    transition: all 500ms;
+}
+
+.home-login:hover {
+    transform: scale(1.15);
+}
+
+.home-login:visited {
+    color: white;
+    text-decoration: none;
+}
+
+/*---------------------------------------
+---------LOGIN/SIGNUP PAGES -------------
+----------------------------------------*/
+/* SIGN UP */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 120px;
+
+}
+.auth-header {
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+
+
+}
+
+.auth-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    opacity: 0.9;
+    border-radius: 32px;
+    justify-content: space-evenly;
+    margin: auto;
+    box-shadow: 19px -10px 29px -3px rgba(0,0,0,0.71);
+    background-color: #E6E8F4;
+    padding: 24px;
+    padding-bottom: 32px;
+
+}
+.auth-label {
+    font-size: .9em;
+    color: #3C457D;
+}
+
+.email-input {
+    margin-bottom: 24px;
+    padding: 8px;
+    border-radius: 16px;
+    color: #3C457D;
+    font-size: .6em;
+}
+.email-input:focus {
+    outline: none;
+}
+.username-input {
+    margin-bottom: 24px;
+    padding: 8px;
+    border-radius: 16px;
+    color: #3C457D;
+    font-size: .6em;
+}
+
+.username-input:focus {
+    outline: none;
+}
+
+.password-input {
+    margin-bottom: 24px;
+    padding: 8px;
+    border-radius: 16px;
+    color: #3C457D;
+    font-size: .6em;
+}
+.password-input:focus {
+    outline: none;
+}
+
+.auth-submit {
+    width: 30%;
+    margin: auto;
+    background-color: rgba(236, 84, 130, 1);
+    margin-bottom: 40px;
+    padding: 8px;
+    border-radius: 24px;
+    color: white;
+    font-size: .85em;
+    margin-top: 32px;
+    transition: all 500ms;
+}
+.auth-submit:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+.login-question {
+    text-align: center;
+    font-size: .5em;
+}
 
 /********************
 ---DASHBAORD--Section ----
@@ -46,12 +289,18 @@ h1 h2 h3 {
 .side-nav-container {
     display: flex;
     flex-direction: column;
-    background-color: #313896;
+    background-color: #E6E8F4;
     margin-right: 150px;
     padding-left: 15px;
     padding-right: 30px;
-    width: 45%;
+    width: 15%;
 }
+
+.sticky-div {
+    position: sticky;
+    top: 72px;
+}
+
 
 .side-nav-container a {
     text-decoration: none;
@@ -72,14 +321,22 @@ h1 h2 h3 {
     flex-direction: column;
     float: left;
     flex-wrap: wrap;
-    background-color: #F6E8EA;
+    background-color: #E6E8F4;
     height: 100%;
     width: 90%;
     margin-right: 350px;
-
     margin-bottom: 20px;
     padding: 15px;
-    box-shadow: 10px 5px 5px;
+    box-shadow: 29px -15px 29px -3px rgba(0,0,0,0.71);
+
+}
+
+.card-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accomlished-btn {
 
 }
 
@@ -92,7 +349,7 @@ h1 h2 h3 {
 }
 .username-header {
     margin-top: 15px;
-    color: #F6E8EA;
+    color: #323545;
     padding-left: 20px;
     font-family: 'Bitter', serif;
 
@@ -100,7 +357,7 @@ h1 h2 h3 {
 
 .header-question {
     position: sticky;
-    color: white;
+    color: #323545;
 }
 
 .profile-options {
@@ -124,24 +381,23 @@ h1 h2 h3 {
 
 .profile-options-btn {
     border: solid;
-    background-color: #F6E8EA;
-    color: #9F32B2;
-    width: 100%;
+    border-color: #316cfe;
+    color: white;
+    width: 1em;
     height: 4em;
     text-decoration: none;
     padding: auto;
     margin-top: 20px;
     text-align: center;
-    padding-top: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
     transition-property: all;
     transition-duration: 200ms;
-    padding-bottom: 15px;
+    padding-bottom: 8px;
+    font-size: .8em;
 }
 .profile-options-btn:hover {
-    color: #F6E8EA;
-    background-color:#9F32B2;
 }
 
 /* .profile-link {

@@ -1,13 +1,15 @@
-<h1 class="goalboard-header">Your Goals Dashboard</h1>
+<div class="dboard-hero">
+    <h1 class="goalboard-header">Your Goals Dashboard</h1>
+</div>
 <div class="index-container">
     <div class="side-nav-container">
-        <h2 class="username-header">Hey, {{user.username}}!</h2>
-        <h3 class="header-question">What goals are we accomplishing today?</h3>
-        <ul class="profile-options">
-            <li class="profile-list-item"><a href="/goals/new" class="profile-options-btn">Create New</a></li>
-            <li class="profile-list-item"><a href="#" class="profile-options-btn">Browse Friends</a></li>
-            <li class="profile-list-item"><a href="/dashboard/edit" class="profile-options-btn">Edit Goal</a></li>
-        </ul>
+        <div class="sticky-div">
+            <h2 class="username-header">{{user.username}}'s Goals</h2>
+            <ul class="profile-options">
+                <li class="profile-list-item"><a href="/goals/new" class="profile-options-btn">Create New</a></li>
+                <li class="profile-list-item"><a href="/dashboard/edit" class="profile-options-btn">Edit Goal</a></li>
+            </ul>
+        </div>
     </div>
     <div class="card-container">
         {{#each user.goals}}
@@ -23,10 +25,12 @@
                 <p class="goal-type">{{this.type}}</p>
                 <hr class="content-divider">
                 <p class="goal-description">{{this.description}}</p>
-                <a class="show-goal-btn" href="/goals/{{this._id}}">Log Updates</a>
-                <form action="/goals/{{this._id}}/accomplished?_method=PUT" method="post">
-                    <button type="submit" class="accomplish-btn">Goal Accomplished!</button>
-                </form>
+                <div class="card-btns">
+                    <button type="submit" class="show-btn"><a class="show-goal-btn" href="/goals/{{this._id}}">Log Updates</a></button>
+                    <form action="/goals/{{this._id}}/accomplished?_method=PUT" method="post">
+                        <button type="submit" class="accomplish-btn">Goal Accomplished!</button>
+                    </form>
+                </div>
             </div>
         </div>
         {{/each}}
