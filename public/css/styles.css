@@ -324,11 +324,13 @@ h1 h2 h3 {
     border-radius: 24px;
     margin: auto;
     margin-bottom: 32px;
+    transition: all 550ms;
 
 }
 
 .accomplished-background:hover {
     box-shadow: 3px 7px 174px 32px rgba(255,215,0,0.75);
+    transform: scale(1.2)
 
 }
 .goal-accomplished-header {
@@ -632,15 +634,48 @@ h1 h2 h3 {
     cursor: pointer;
 }
 
-/****************************
+/****************************----------------
 ---SHOW--SINGLE--DREAM--SECTION--
-*****************************/
+------------*****************************/
 .show-goal-card {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    flex-wrap: wrap;
+    background-color: #E6E8F4;
+    height: 100%;
+    width: 75%;
     margin: auto;
-    width: 80%;
-    background-color: white;
-    padding: 25px;
-    margin-top: 50px;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    text-align: center;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 6px 8px 9px 1px rgba(0,0,0,0.58);
+    color: #3C457D;
+}
+.edit-goal-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.edit-goal-btn {
+    background-color: rgba(236, 84, 130, 1);
+    width: 9em;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-bottom: 16px;
+    padding: 8px;
+    font-size: .7em;
+    text-decoration: none;
+    color: white;
+    font-size: .55em;
+    border-radius: 8px;
+    transition: all 500ms;
+}
+.edit-goal-btn:hover {
+    cursor: pointer;
+    transform: scale(1.15);
 }
 .action-items-header {
     margin-left: 20px;
@@ -651,6 +686,12 @@ h1 h2 h3 {
     margin-left: 20px;
 
 }
+.show-single-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .new-updates-header {
     margin-top: 50px;
@@ -673,13 +714,52 @@ h1 h2 h3 {
     margin-bottom: 30px;
 }
 
-.update-container {
-    margin-left: 20px;
+.actionItems-container {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    flex-wrap: wrap;
+    background-color: #E6E8F4;
+    height: 100%;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 64px;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 6px 8px 9px 1px rgba(0,0,0,0.58);
+    color: #3C457D;
+}
+.actionItems-divider {
+    width: 100%;
+    border-bottom: solid;
+    border-color: #3C457D;
+}
+
+.updates-container {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    flex-wrap: wrap;
+    background-color: #E6E8F4;
+    height: 100%;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 64px;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 6px 8px 9px 1px rgba(0,0,0,0.58);
+    color: #3C457D;
+}
+
+.updates-divider {
+    width: 100%;
+    border-bottom: solid;
+    border-color: #3C457D;
 }
 
 
 /******************************
-
+----ACTION ITEMS
 *******************************/
 
 #action-items {
