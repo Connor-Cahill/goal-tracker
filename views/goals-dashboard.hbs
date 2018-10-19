@@ -2,14 +2,12 @@
     <h1 class="goalboard-header">Your Goals Dashboard</h1>
 </div>
 <div class="index-container">
-    <div class="side-nav-container">
+    <div class="option-btn-container">
         <div class="sticky-div">
-            <h2 class="username-header">{{user.username}}'s Goals</h2>
-            <ul class="profile-options">
-                <li class="profile-list-item"><a href="/goals/new" class="profile-options-btn">Create New</a></li>
-                <li class="profile-list-item"><a href="/dashboard/edit" class="profile-options-btn">Edit Goal</a></li>
-            </ul>
+        <form action="/goals/new" method="get"><button type="submit" class="new-goal-btn"><i class="fas fa-plus-circle"> New Goal</i></button></form>
+        <form action="/dashboard/edit" method="get"><button type="submit" class="edit-goals-btn"><i class="far fa-edit"> Edit</i></button></form>
         </div>
+
     </div>
     <div class="card-container">
         {{#each user.goals}}
@@ -21,12 +19,17 @@
                 </div>
                 {{/if}}
                 <h1 class="goal-title">{{this.title}}</h1>
-                <p class="goal-time">{{this.createdAt}}</p>
-                <p class="goal-type">{{this.type}}</p>
-                <hr class="content-divider">
+                <div class="time-container">
+                    <p class="goal-time">Goal Created: {{this.createdAt}}</p>
+                    <p class="goal-type">Duration: {{this.type}}</p>
+                </div>
+                <div class="content-divider"></div>
+                <p class="goal-description-header">Goal Description: </p>
                 <p class="goal-description">{{this.description}}</p>
                 <div class="card-btns">
-                    <button type="submit" class="show-btn"><a class="show-goal-btn" href="/goals/{{this._id}}">Log Updates</a></button>
+                    <form action="/goals/{{this._id}}" method="get">
+                        <button type="submit" class="show-btn">Log Updates</button>
+                    </form>
                     <form action="/goals/{{this._id}}/accomplished?_method=PUT" method="post">
                         <button type="submit" class="accomplish-btn">Goal Accomplished!</button>
                     </form>

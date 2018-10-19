@@ -14,7 +14,7 @@ Colors:
 
 
 * {
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Arvo', serif;
 }
 body {
     font-size: 24px;
@@ -29,7 +29,6 @@ body {
 }
 
 h1 h2 h3 {
-    font-family: 'Bitter', serif;
 
 }
 
@@ -49,9 +48,19 @@ h1 h2 h3 {
 .dreamboard-nav {
     color: #536ADE;
     margin-left: 16px;
-    font-size: 1em;
+    margin-top: 8px;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.2em;
     transition: all 200ms;
+    text-decoration: none;
 }
+.dreamboard-nav:visited {
+    color: #536ADE;
+    text-decoration: none;
+}
+
+
 
 .dreamboard-nav:hover {
     color: #3C457D;
@@ -109,7 +118,7 @@ h1 h2 h3 {
     justify-content: center;
     text-align: center;
     border-radius: 32px;
-    box-shadow: 19px -10px 29px -3px rgba(0,0,0,0.71);
+    box-shadow: 6px 8px 9px 1px rgba(0,0,0,0.58);
     padding-bottom: 32px;
 
 }
@@ -201,7 +210,7 @@ h1 h2 h3 {
     border-radius: 32px;
     justify-content: space-evenly;
     margin: auto;
-    box-shadow: 19px -10px 29px -3px rgba(0,0,0,0.71);
+    box-shadow: 6px 8px 9px 1px rgba(0,0,0,0.58);
     background-color: #E6E8F4;
     padding: 24px;
     padding-bottom: 32px;
@@ -272,8 +281,8 @@ h1 h2 h3 {
 **********************/
 .goalboard-header {
     text-align: center;
+    color: white;
     font-size: 2.4em;
-    font-family: 'Bitter', serif;
 
 
 
@@ -289,7 +298,6 @@ h1 h2 h3 {
 .side-nav-container {
     display: flex;
     flex-direction: column;
-    background-color: #E6E8F4;
     margin-right: 150px;
     padding-left: 15px;
     padding-right: 30px;
@@ -302,20 +310,32 @@ h1 h2 h3 {
 }
 
 
-.side-nav-container a {
-    text-decoration: none;
-}
 
-.side-nav-container a:hover {
-    text-decoration: none;
-}
 
 .card-container {
     display: flex;
     flex-direction: column;
 
 }
+.accomplished-background {
+    background-color: #4caf50;
+    opacity: 0.75;
+    width: 30%;
+    border-radius: 24px;
+    margin: auto;
+    margin-bottom: 32px;
 
+}
+
+.accomplished-background:hover {
+    box-shadow: 3px 7px 174px 32px rgba(255,215,0,0.75);
+
+}
+.goal-accomplished-header {
+    font-size: 1em;
+    text-shadow: 2px 1px 12px rgba(255,215,0,0.7);
+
+}
 .goal-card {
     display: flex;
     flex-direction: column;
@@ -325,10 +345,48 @@ h1 h2 h3 {
     height: 100%;
     width: 90%;
     margin-right: 350px;
-    margin-bottom: 20px;
-    padding: 15px;
-    box-shadow: 29px -15px 29px -3px rgba(0,0,0,0.71);
+    margin-bottom: 64px;
+    text-align: center;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 6px 8px 9px 1px rgba(0,0,0,0.58);
+    color: #3C457D;
 
+}
+
+.goal-title {
+    margin-bottom: 16px;
+    margin-top: 0px;
+
+}
+.time-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.goal-time {
+    margin-top: 0px;
+    font-size: 0.6em;
+    margin-bottom: 16px;
+}
+
+
+.goal-type {
+    margin-top: 0px;
+    font-size: 0.6em;
+    margin-bottom: 16px;
+}
+.content-divider {
+    width: 100%;
+    border-bottom: solid;
+    border-color: #3C457D;
+
+}
+.goal-description-header {
+    text-align: left;
+    margin-left: 32px;
+    font-size: 1em;
 }
 
 .card-btns {
@@ -336,84 +394,89 @@ h1 h2 h3 {
     justify-content: space-between;
 }
 
-.accomlished-btn {
+.show-btn {
+    background-color: rgba(236, 84, 130, 1);
+    width: 12em;
+    margin-bottom: 16px;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: .55em;
+    border-radius: 8px;
+    transition: all 500ms;
+}
+.show-btn:hover {
+    transform: scale(1.15);
+}
 
+.accomplish-btn {
+    background-color: rgba(236, 84, 130, 1);
+    width: 12em;
+    margin-bottom: 16px;
+    padding: 8px;
+    font-size: .55em;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    transition: all 500ms;
+}
+.accomplish-btn:hover {
+    transform: scale(1.15);
 }
 
 
 /***** ----Side bar contents ---- *****/
-.profile-pic {
-    padding-left: 20px;
-    padding-top: 30px;
-    /* Get image to show, round the image */
-}
-.username-header {
-    margin-top: 15px;
-    color: #323545;
-    padding-left: 20px;
-    font-family: 'Bitter', serif;
-
-}
-
-.header-question {
-    position: sticky;
-    color: #323545;
-}
-
-.profile-options {
-    margin-top: 3em;
-    list-style: none;
-    padding-right: 20px;
-    height: 100vh;
-    position: sticky;
-    display: flex;
-    flex-direction: column;
-}
-
-.profile-list-item {
-    margin-top: 50px;
-    transition: all 200ms;
-
-}
-.profile-list-item:hover {
-    transform: scale(1.10);
-}
-
-.profile-options-btn {
-    border: solid;
-    border-color: #316cfe;
+.new-goal-btn {
+    background: rgba(236, 84, 130, 1);
+    opacity: 0.8;
+    width: 8em;
+    outline: none;
     color: white;
-    width: 1em;
-    height: 4em;
-    text-decoration: none;
-    padding: auto;
-    margin-top: 20px;
-    text-align: center;
-    padding-top: 8px;
-    padding-left: 8px;
-    padding-right: 8px;
-    transition-property: all;
-    transition-duration: 200ms;
-    padding-bottom: 8px;
-    font-size: .8em;
-}
-.profile-options-btn:hover {
+    padding: 8px;
+    border-left: none;
+    border-color: white;
+    font-size: 1em;
+    border-width: medium;
+    transition: all 500ms;
 }
 
-/* .profile-link {
-    text-align: center;
-    color: #4BC0D9;
-    text-decoration: none;
 
 
-
+.new-goal-btn:hover {
+    transform-origin: left;
+    transform: scaleX(1.15);
+    cursor: pointer;
 }
 
-.profile-link:hover {
-    text-decoration: none;
+.edit-goals-btn {
+    background: rgba(236, 84, 130, 1);
+    opacity: 0.8;
+    width: 8em;
+    outline: none;
+    color: white;
+    padding: 8px;
+    border-left: none;
+    border-color: white;
+    margin-top: 24px;
+    font-size: 1em;
+    border-width: medium;
+    transition: all 500ms;
+}
+.edit-goals-btn:hover {
+    transform-origin: left;
+    transform: scaleX(1.15);
+    cursor: pointer;
+}
+
+.option-btn-container {
+    margin-right: 64px;
+}
 
 
-} */
+
+
+
+
 
 
 /*** DREAM DISPLAY CARD ****/
@@ -426,69 +489,148 @@ h1 h2 h3 {
 **********************/
 .add-goal-header {
     text-align: center;
-    margin-top: 25px;
-    font-family: 'Bitter', serif;
+    margin-top: 64px;
     color: white;
-    font-size: 4em;
+    font-size: 2.5em;
+
 
 }
 
 .new-form-container {
-    background-color: white;
-    color: #313896;
-    width: 50em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #E6E8F4;
+    height: 100%;
+    width: 65%;
     margin: auto;
-    margin-top: 100px;
-    padding: 20px;
-    font-size: 1.5em;
+    margin-bottom: 64px;
+    text-align: center;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 6px 8px 9px 1px rgba(0,0,0,0.58);
+    color: #3C457D;
 }
 
 /****----FORM ITEMS----****/
-.goal-title-label {
-    /* fix font and spacing with input */
 
-}
+
 .title-input {
-    width: 100%;
-    color: #313896;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
+    border: none;
+    border-bottom: solid;
+    background-color: #E6E8F4;
+    padding: 8px;
+    color: #3C457D;
+    font-size: .6em;
+    width: 30%;
+    font-size: 1em;
+}
+.title-label {
+    font-size: 1em;
+    color: #3C457D;
 }
 
+.title-input:focus {
+    outline: none;
+}
 .duration-type-label {
-    /* fix font size and spacing-- needs margin -- */
+    font-size: 1.3em;
+}
+.shortterm-label {
+    font-size: .8em;
+}
 
+.longterm-label {
+    font-size: .8em;
+}
+.description-container {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
 }
 
 .description-label {
     /* fix spacing and font */
-    margin-top: 30px;
+    margin-top: 24px;
+    text-align: left;
+    margin-left: 122px;
 
 }
 .description-input {
-    width: 100%;
-    color: #313896;
+    width: 75%;
+    border-radius: 8px;
+    font-size: .8em;
+    color: inherit;
+    margin: auto;
 }
 
 .description-input:focus {
-
+    outline: none;
     }
-
 .save-goal-btn {
-    width: 10em;
-    background-color: #313896;
+    background-color: rgba(236, 84, 130, 1);
+    width: 12em;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-bottom: 16px;
+    padding: 8px;
+    text-decoration: none;
     color: white;
-    transition: all 200ms;
-
+    font-size: .55em;
+    border-radius: 8px;
+    transition: all 500ms;
 }
 
 .save-goal-btn:hover {
-    transform: scale(1.1);
-    background-color: white;
-    color: #313896;
-    outline: none;
+    transform: scale(1.15);
+    cursor: pointer;
 }
 
+/*----------------------------
+---------EDIT GOALS-----------
+------------------------------*/
+.edit-goals-header {
+    text-align: center;
+    margin-top: 64px;
+    color: white;
+    font-size: 2.5em;
 
+}
+
+.goals-edit-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #E6E8F4;
+    height: 100%;
+    width: 65%;
+    margin: auto;
+    margin-bottom: 64px;
+    text-align: center;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 6px 8px 9px 1px rgba(0,0,0,0.58);
+    color: #3C457D;
+}
+.apply-edits-btn {
+    background-color: rgba(236, 84, 130, 1);
+    width: 12em;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-bottom: 16px;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: .55em;
+    border-radius: 8px;
+    transition: all 500ms;
+}
+
+.apply-edits-btn:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
 
 /****************************
 ---SHOW--SINGLE--DREAM--SECTION--
