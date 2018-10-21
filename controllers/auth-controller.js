@@ -48,7 +48,7 @@ module.exports = function(app) {
                 return res.status(401).send('Wrong username or password')
             } else {
                 const token = jwt.sign({_id: user._id}, process.env.SECRET, {expiresIn: '60 days'});
-                res.cookie('Token', token, {maxAge: 90000, httpOnly: true});
+                res.cookie('Token', token, {maxAge: 24 * 60 * 60 * 1000, httpOnly: true}); //maxAge = 24 hours 
                 return res.redirect('/dashboard');
             }
 
